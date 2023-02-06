@@ -11,6 +11,7 @@ const Login = () => {
     const name = e.target.email.value;
     const password = e.target.password.value;
     console.log(name, password);
+    console.log("haha hehe")
   };
 
   return (
@@ -19,13 +20,13 @@ const Login = () => {
       <div className="absolute z-50 top-1/4 left-[10%] md:left-[20%] 2xl:top-[18%] 2xl:left-[37.5%] lg:left-1/3 translate-1/2">
         <form
           onSubmit={(e) => onSubmit(e)}
-          className="bg-[#f6f8fa] h-[55vh] w-[80vw] px-5 md:h-[50vh] md:w-[60vw] 2xl:h-[55vh] 2xl:w-[25vw] lg:w-[30vw] flex flex-col md:px-16 space-y-4 rounded-md shadow-lg py-10"
+          className="bg-[#f6f8fa] h-[55vh] w-[80vw] px-5 md:h-[50vh] md:w-[60vw] lg:h-[60vh] 2xl:h-[63vh] 2xl:w-[25vw] lg:w-[30vw] flex flex-col md:px-16 space-y-4 rounded-md shadow-lg py-10"
         >
           <img
             src={Logo}
             alt="ismt-logo"
             width="200px"
-            className="mx-auto mb-5 w-32 md:w-40 xl:w-52"
+            className="mx-auto mb-5 w-32 md:w-40 xl:w-48"
           />
           <Input
             placeholder="Enter your email address.."
