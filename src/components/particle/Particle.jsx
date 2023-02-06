@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
-function Particle(props) {
+function Particle(prop) {
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
     await loadFull(engine);
@@ -16,6 +16,7 @@ function Particle(props) {
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
+      className="z-1"
       options={{
         background: {
           color: {
@@ -25,14 +26,6 @@ function Particle(props) {
         fpsLimit: 120,
         interactivity: {
           events: {
-            onClick: {
-              // enable: true,
-              // mode: "push",
-            },
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
             resize: true,
           },
           modes: {
@@ -66,7 +59,7 @@ function Particle(props) {
               default: "bounce",
             },
             random: false,
-            speed: 2,
+            speed: 1,
             straight: false,
           },
           number: {
@@ -88,7 +81,7 @@ function Particle(props) {
         },
         detectRetina: true,
       }}
-    />
+    ></Particles>
   );
 }
 
