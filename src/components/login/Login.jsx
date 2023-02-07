@@ -67,7 +67,7 @@ const Login = () => {
       <div className="absolute z-50 top-1/4 left-[10%] md:left-[20%] 2xl:top-[18%] 2xl:left-[37.5%] lg:left-1/3 translate-1/2">
         <form
           onSubmit={(e) => onSubmit(e)}
-          className="bg-[#f6f8fa] h-[55vh] w-[80vw] px-5 md:h-[50vh] md:w-[60vw] 2xl:h-[65vh] 2xl:w-[25vw] lg:w-[30vw] flex flex-col md:px-16 space-y-4 rounded-md shadow-lg py-10"
+          className="bg-[#f6f8fa] flex flex-col md:px-16 space-y-4 rounded-md shadow-lg py-10 h-[55%] w-[80vw] px-5 md:h-[50%] md:w-[60vw] lg:w-[30vw] 2xl:h-[65%] 2xl:w-[25vw]  "
         >
           <img
             src={Logo}
