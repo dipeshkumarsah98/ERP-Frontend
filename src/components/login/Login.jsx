@@ -53,6 +53,7 @@ const Login = () => {
         })
         .catch((err) => {
           enqueueSnackbar(err?.response?.data?.msg, { variant: "error" });
+          setLoginData({ email: "", password: "" });
           setLoading(false);
         });
     }
@@ -74,20 +75,21 @@ const Login = () => {
             width="200px"
             className="mx-auto mb-5 w-32 md:w-40 xl:w-52"
           />
-          <input
+          <Input
             placeholder="Enter your email address.."
             name="email"
             type="email"
             value={loginData.email}
-            onChange={(e) => handleChange(e)}
+            handleChange={handleChange}
           />
-          <input
+          <Input
             placeholder="password here"
             name="password"
             type="password"
             value={loginData.password}
-            onChange={(e) => handleChange(e)}
+            handleChange={handleChange}
           />
+
           <button
             type="submit"
             className="bg-[#ED741A] text-white px-4 py-2 rounded-sm hover:bg-[#ED741A]/75"
