@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ placeholder, name, type }) => {
+const Input = ({ placeholder, name, type, handleChange, value }) => {
   return (
     <div className="space-y-1">
       <input
@@ -11,6 +11,8 @@ const Input = ({ placeholder, name, type }) => {
         placeholder={placeholder || "Enter any text.."}
         type={type || "text"}
         name={name || type}
+        value={value || ""}
+        onChange={(e) => handleChange(e)}
       />
     </div>
   );

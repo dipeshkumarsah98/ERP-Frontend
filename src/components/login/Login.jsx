@@ -48,14 +48,17 @@ const Login = () => {
               variant: "success",
             }
           );
-          setUserData(res.data)
+          setUserData(res.data);
           setLoading(false);
         })
         .catch((err) => {
           enqueueSnackbar(err?.response?.data?.msg, { variant: "error" });
+          setLoginData({ email: "", password: "" });
           setLoading(false);
         });
     }
+    // student invaid
+    // teacher
   };
 
   return (
@@ -64,7 +67,7 @@ const Login = () => {
       <div className="absolute z-50 top-1/4 left-[10%] md:left-[20%] 2xl:top-[18%] 2xl:left-[37.5%] lg:left-1/3 translate-1/2">
         <form
           onSubmit={(e) => onSubmit(e)}
-          className="bg-[#f6f8fa] h-[55vh] w-[80vw] px-5 md:h-[50vh] md:w-[60vw] 2xl:h-[65vh] 2xl:w-[25vw] lg:w-[30vw] flex flex-col md:px-16 space-y-4 rounded-md shadow-lg py-10"
+          className="bg-[#f6f8fa] flex flex-col md:px-16 space-y-4 rounded-md shadow-lg py-10 h-[55%] w-[80vw] px-5 md:h-[50%] md:w-[60vw] lg:w-[30vw] 2xl:h-[65%] 2xl:w-[25vw]  "
         >
           <img
             src={Logo}
@@ -72,20 +75,21 @@ const Login = () => {
             width="200px"
             className="mx-auto mb-5 w-32 md:w-40 xl:w-48"
           />
-          <input
+          <Input
             placeholder="Enter your email address.."
             name="email"
             type="email"
             value={loginData.email}
-            onChange={(e) => handleChange(e)}
+            handleChange={handleChange}
           />
-          <input
+          <Input
             placeholder="password here"
             name="password"
             type="password"
             value={loginData.password}
-            onChange={(e) => handleChange(e)}
+            handleChange={handleChange}
           />
+
           <button
             type="submit"
             className="bg-[#ED741A] text-white px-4 py-2 rounded-sm hover:bg-[#ED741A]/75"
