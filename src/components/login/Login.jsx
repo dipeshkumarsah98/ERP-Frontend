@@ -48,7 +48,7 @@ const Login = () => {
               variant: "success",
             }
           );
-          setUserData(res.data)
+          setUserData(res.data);
           setLoading(false);
         })
         .catch((err) => {
@@ -56,6 +56,8 @@ const Login = () => {
           setLoading(false);
         });
     }
+    // student invaid
+    // teacher
   };
 
   return (
