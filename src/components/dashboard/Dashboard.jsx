@@ -1,27 +1,23 @@
 import React from "react";
-import { Outlet } from "react-router";
-import Sidebar from "../sidebar/Sidebar";
-import Event from "../student/Event";
 import StudentDetail from "../student/StudentDetail";
+import Event from "../event/Event";
 
 const Dashboard = () => {
   return (
-    <div className="container-fluid ">
+    <>
+      <h1 className="my-2 text-xl font-semibold font-mono text-blue-700 md:text-2xl xl:text-3xl">
+        Dashboard
+      </h1>
       <div className="row">
-        {/*  col-2 */}
-        <Sidebar />
-        <div className="col-12 col-md-8 col-lg-10 bg-[#FAFAFA] overflow-x-scroll">
-          <div className="row">
-            <div className="col-8 col-lg-9">
-              <StudentDetail />
-            </div>
-            <div className="bg-white col-4 col-lg-3">
-              <Event />
-            </div>
-          </div>
+        <div className="col-12 col-lg-8">
+          <StudentDetail />
+        </div>
+        {/* events */}
+        <div className="col-lg-4 ">
+          <Event />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

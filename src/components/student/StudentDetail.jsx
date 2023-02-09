@@ -11,7 +11,6 @@ const StudentDetail = () => {
         <Card />
         <Card />
       </div>
-
       <UserProfile />
     </div>
   );
