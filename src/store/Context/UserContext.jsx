@@ -15,7 +15,7 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (!userLoading) {
+    if(userData) {
       localStorage.setItem("userData", JSON.stringify(userData));
     }
   }, [userData, userLoading]);

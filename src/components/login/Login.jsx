@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import Particle from "../particle/Particle";
 import Logo from "../../assets/logo-ismt.png";
 import Input from "../common/Input";
+import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import axios from "axios";
 import { UserContext } from "../../store/Context/UserContext";
@@ -12,19 +13,18 @@ const Login = () => {
   const [error, setError] = useState("");
   const { enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const initialState = {
     email: "",
     password: "",
   };
 
   const [loginData, setLoginData] = useState(initialState);
-  console.log(loginData);
 
   const handleChange = (e) => {
     e.preventDefault();
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
   };
-  console.log("user data are : ", userData);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -41,15 +41,16 @@ const Login = () => {
         },
       })
         .then((res) => {
-          console.log("response data are : ", res.data.name);
+          console.log("response data are : ", res.data.student.firstName);
           enqueueSnackbar(
-            `Welcome to Dashboard , ${res?.data?.student?.name}`,
+            `Welcome to Dashboard , ${res?.data?.student?.firstName}`,
             {
               variant: "success",
             }
           );
           setUserData(res.data);
           setLoading(false);
+          navigate('/home')
         })
         .catch((err) => {
           enqueueSnackbar(err?.response?.data?.msg, { variant: "error" });
