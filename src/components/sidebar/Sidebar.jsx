@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className="d-flex flex-column flex-shrink-0 p-3 text-white bg-blue-700 col-6 col-md-4 col-lg-2"
+      className=" flex-column flex-shrink-0 p-3 text-white bg-blue-700 col-1 col-md-4 col-lg-2 hidden md:flex"
       style={{ height: "100vh" }}
     >
       <a
