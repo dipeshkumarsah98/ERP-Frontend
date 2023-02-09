@@ -10,7 +10,7 @@ const Event = () => {
       <div className="flex gap-1 overflow-x-scroll">
         <img src={Logo} alt="image" className="w-10 h-10" />
         <div className="w-full">
-          <h2>RObotic workshop RObotic workshop RObotic workshop</h2>
+          <h2>Robotic workshop Robotic workshop Robotic workshop</h2>
           <p>16 feb</p>
         </div>
       </div>
