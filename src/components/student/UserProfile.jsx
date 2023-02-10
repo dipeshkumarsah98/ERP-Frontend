@@ -12,7 +12,7 @@ const UserProfile = () => {
           />
         </div>
         <table className="table">
-          <tbody>
+          <tbody> 
             <tr>
               <td>Name: Dipesh kumar sah</td>
               <td>Email: kac22.26dks@ismt.edu.np</td>
