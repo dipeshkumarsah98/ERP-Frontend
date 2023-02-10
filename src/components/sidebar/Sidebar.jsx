@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
-import { AiFillCaretDown } from "react-icons/ai";
+import { AiFillCaretDown, AiFillHome } from "react-icons/ai";
+import { GoBook } from "react-icons/go";
+import { BsFileBarGraph } from "react-icons/bs";
+import { HiAcademicCap } from "react-icons/hi";
+import { MdOutlineLibraryBooks, MdAccountBalance } from "react-icons/md";
 
 const Sidebar = () => {
   const [active, setActive] = useState("home");
@@ -11,7 +15,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className=" flex-column max-h-full xl:h-screen flex-shrink-0 p-3 text-white bg-blue-700 col-1 col-md-4 col-lg-2 hidden md:flex">
+    <div className=" flex-column max-h-full xl:h-screen font-roboto flex-shrink-0 p-3 text-white bg-blue-700 col-1 col-md-4 col-lg-2 hidden md:flex">
       <a
         href="/"
         className="d-flex justify-center items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
@@ -31,23 +35,25 @@ const Sidebar = () => {
             to={"/"}
             className={
               active === "home"
-                ? "nav-link text-white active"
-                : "nav-link text-white"
+                ? "nav-link text-white active flex items-center  gap-2 text-xl"
+                : "nav-link text-white flex items-center  gap-2 text-xl"
             }
             onClick={() => handleClick("home")}
             aria-current="page"
           >
+            <AiFillHome />
             Home
           </Link>
         </li>
         <li className="nav-item">
           <button
-            className="btn btn-toggle align-items-center rounded text-white flex gap-1"
+            className="btn btn-toggle align-items-center rounded text-white flex gap-2 text-xl"
             data-bs-toggle="collapse"
             data-bs-target="#dashboard-collapse"
             aria-expanded="true"
           >
-            Report
+            <HiAcademicCap />
+            Assignment
             <AiFillCaretDown />
           </button>
           <div className="collapse" id="dashboard-collapse">
@@ -58,8 +64,8 @@ const Sidebar = () => {
                   onClick={() => handleClick("blood")}
                   className={
                     active === "blood"
-                      ? "nav-link text-white active"
-                      : "nav-link text-white"
+                      ? "nav-link text-white active text-lg"
+                      : "nav-link text-white text-lg"
                   }
                 >
                   Blood Report
@@ -71,8 +77,8 @@ const Sidebar = () => {
                   onClick={() => handleClick("urin")}
                   className={
                     active === "urin"
-                      ? "nav-link text-white active"
-                      : "nav-link text-white"
+                      ? "nav-link text-white active text-lg"
+                      : "nav-link text-white text-lg"
                   }
                 >
                   Urin Report
@@ -84,8 +90,8 @@ const Sidebar = () => {
                   onClick={() => handleClick("stool")}
                   className={
                     active === "stool"
-                      ? "nav-link text-white active"
-                      : "nav-link text-white"
+                      ? "nav-link text-white active text-lg"
+                      : "nav-link text-white text-lg"
                   }
                 >
                   Stool Report
@@ -100,11 +106,12 @@ const Sidebar = () => {
             onClick={() => handleClick("heart-report")}
             className={
               active === "heart-report"
-                ? "nav-link text-white active"
-                : "nav-link text-white"
+                ? "nav-link text-white active flex items-center  gap-2 text-xl"
+                : "nav-link text-white flex items-center  gap-2 text-xl"
             }
           >
-            Heart Report
+            <GoBook />
+            Library
           </Link>
         </li>
         <li>
@@ -113,11 +120,40 @@ const Sidebar = () => {
             onClick={() => handleClick("diabetes-status")}
             className={
               active === "diabetes-status"
-                ? "nav-link text-white active"
-                : "nav-link text-white"
+                ? "nav-link text-white active flex items-center  gap-2 text-xl"
+                : "nav-link text-white flex items-center  gap-2 text-xl"
             }
           >
-            diabetes Status
+            <MdOutlineLibraryBooks />
+            Courses
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            onClick={() => handleClick("diabetes-status")}
+            className={
+              active === "diabetes-status"
+                ? "nav-link text-white active flex items-center  gap-2 text-xl"
+                : "nav-link text-white flex items-center  gap-2 text-xl"
+            }
+          >
+            <BsFileBarGraph />
+            Result
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            onClick={() => handleClick("diabetes-status")}
+            className={
+              active === "diabetes-status"
+                ? "nav-link text-white active flex items-center  gap-2 text-xl"
+                : "nav-link text-white flex items-center  gap-2 text-xl"
+            }
+          >
+            <MdAccountBalance />
+            Account
           </Link>
         </li>
       </ul>
