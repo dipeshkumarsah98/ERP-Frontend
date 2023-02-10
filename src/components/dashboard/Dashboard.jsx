@@ -5,7 +5,7 @@ import Event from "../event/Event";
 const Dashboard = () => {
   return (
     <>
-      <h1 className="my-2 text-xl font-semibold font-mono text-blue-700 md:text-2xl xl:text-3xl">
+      <h1 className="my-2 text-xl font-semibold font-openSans text-blue-500 md:text-2xl xl:text-3xl">
         Dashboard
       </h1>
       <div className="row">
