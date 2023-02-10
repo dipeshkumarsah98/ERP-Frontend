@@ -5,11 +5,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "./Helper/ProtectRoute/ProtectedRoute";
 import { UserContext } from "./store/Context/UserContext";
 import { Assignment } from "./components/assignment";
+import Library from "./components/Library/Library";
 import Index from "./page/Index";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dashboard from "./components/dashboard/Dashboard";
-import Library from "./components/Library/Library";
+import Accounting from "./components/Accounting/Accounting";
+import Exam from "./components/exam/Exam";
+import Course from "./components/Course/Course";
 function App() {
   const { userData, setUserData, userLoading, setUserLoading } =
     useContext(UserContext);
@@ -20,14 +23,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          {userData && (
-            <Route
-              element={<ProtectedRoute user={userData} loading={userLoading} />}
-            >
-              <Route path="/" element={<Index />} />
-              <Route path="home" element={<Dashboard />} />
-            </Route>
-          )}
+          <Route path="/" element={<Index />}>
+            <Route path="home" element={<Dashboard />} />
+            <Route path="assignment" element={<Assignment />} />
+            <Route path="library" element={<Library />} />
+            <Route path="account" element={<Accounting />} />
+            <Route path="result" element={<Exam />} />
+            <Route path="course" element={<Course />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

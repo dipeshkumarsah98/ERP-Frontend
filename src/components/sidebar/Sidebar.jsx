@@ -32,7 +32,7 @@ const Sidebar = () => {
       <ul className="nav nav-pills flex-column mt-2 mb-auto">
         <li className="nav-item">
           <Link
-            to={"/"}
+            to={"/home"}
             className={
               active === "home"
                 ? "nav-link text-white active flex items-center  gap-2 text-xl"
@@ -46,6 +46,21 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="nav-item">
+          <Link
+            to={"/assignment"}
+            className={
+              active === "assignment"
+                ? "nav-link text-white active flex items-center  gap-2 text-xl"
+                : "nav-link text-white flex items-center  gap-2 text-xl"
+            }
+            onClick={() => handleClick("assignment")}
+            aria-current="page"
+          >
+            <HiAcademicCap />
+            Assignment
+          </Link>
+        </li>
+        {/* <li className="nav-item">
           <button
             className="btn btn-toggle align-items-center rounded text-white flex gap-2 text-xl"
             data-bs-toggle="collapse"
@@ -99,13 +114,13 @@ const Sidebar = () => {
               </li>
             </ul>
           </div>
-        </li>
+        </li> */}
         <li>
           <Link
-            to="/"
-            onClick={() => handleClick("heart-report")}
+            to="/library"
+            onClick={() => handleClick("library")}
             className={
-              active === "heart-report"
+              active === "library"
                 ? "nav-link text-white active flex items-center  gap-2 text-xl"
                 : "nav-link text-white flex items-center  gap-2 text-xl"
             }
@@ -116,10 +131,10 @@ const Sidebar = () => {
         </li>
         <li>
           <Link
-            to="/"
-            onClick={() => handleClick("diabetes-status")}
+            to="/course"
+            onClick={() => handleClick("courses")}
             className={
-              active === "diabetes-status"
+              active === "courses"
                 ? "nav-link text-white active flex items-center  gap-2 text-xl"
                 : "nav-link text-white flex items-center  gap-2 text-xl"
             }
@@ -130,24 +145,24 @@ const Sidebar = () => {
         </li>
         <li>
           <Link
-            to="/"
-            onClick={() => handleClick("diabetes-status")}
+            to="/result"
+            onClick={() => handleClick("exam-result")}
             className={
-              active === "diabetes-status"
+              active === "exam-result"
                 ? "nav-link text-white active flex items-center  gap-2 text-xl"
                 : "nav-link text-white flex items-center  gap-2 text-xl"
             }
           >
             <BsFileBarGraph />
-            Result
+            Exam Result
           </Link>
         </li>
         <li>
           <Link
-            to="/"
-            onClick={() => handleClick("diabetes-status")}
+            to="/account"
+            onClick={() => handleClick("account")}
             className={
-              active === "diabetes-status"
+              active === "account"
                 ? "nav-link text-white active flex items-center  gap-2 text-xl"
                 : "nav-link text-white flex items-center  gap-2 text-xl"
             }
