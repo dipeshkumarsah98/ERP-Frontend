@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
 import "./App.css";
 import Login from "./components/login/Login";
-import Dashboard from "./components/dashboard/Dashboard";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "./Helper/ProtectRoute/ProtectedRoute";
 import { UserContext } from "./store/Context/UserContext";
+import Index from "./page/Index";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   const { userData, setUserData, userLoading, setUserLoading } =
@@ -22,9 +23,11 @@ function App() {
             <Route 
               element={<ProtectedRoute user={userData} loading={userLoading} />}
             >
-              <Route path="/home" element={<Dashboard />} />
+              <Route path="/" element={<Index />} />
+            <Route path="home" element={<Dashboard />} />
             </Route>
           )}
+          {/* </Route> */}
         </Routes>
       </BrowserRouter>
     </div>

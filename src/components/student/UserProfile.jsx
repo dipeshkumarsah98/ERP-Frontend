@@ -3,38 +3,33 @@ import React from "react";
 const UserProfile = () => {
   return (
     <>
-      <div className="flex flex-col gap-4 justify-center items-center mt-3 border border-gray-300 px-5 py-10">
-        <div>
+      <div className="flex gap-1 mt-2 items-center sm:items-stretch">
+        <div className="bg-white  flex gap-1 items-center justify-start px-3 py-2 rounded-sm flex-none w-32 sm:w-auto">
           <img
-            src="https://i.pinimg.com/736x/6b/7e/d6/6b7ed698713c09ad9e6afc7dcb996a09.jpg"
+            src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
             alt="student-image"
-            className="w-32 border border-gray-300 p-2"
+            className="h-16 w-16 sm:h-20 sm:w-20 rounded-[50%]"
           />
+          <div>
+            <h2 className="font-bold text-[9px] sm:text-xs lg:text-xl">
+              Dipesh Kumar Sah
+            </h2>
+            <p className="text-center text-[9px] lg:text-lg">Active</p>
+          </div>
         </div>
-        <table className="table">
-          <tbody> 
-            <tr>
-              <td>Name: Dipesh kumar sah</td>
-              <td>Email: kac22.26dks@ismt.edu.np</td>
-            </tr>
-            <tr>
-              <td>Date of birth: 2002/1/2</td>
-              <td>Registration number: R87682</td>
-            </tr>
-            <tr>
-              <td>Phone: 9808982517</td>
-              <td>Section: A</td>
-            </tr>
-            <tr>
-              <td>Program: IT</td>
-              <td>Sex: Male</td>
-            </tr>
-            <tr>
-              <td>Address: Jadibuti, Kathmandu</td>
-              <td>Parent name: Rajesh kumar sah</td>
-            </tr>
-          </tbody>
-        </table>
+        <ul className="py-2 px-1 bg-white  rounded-sm text-xs sm:text-sm lg:text-lg flex-1">
+          <li className="border-b border-gray-100 p-1">
+            Name: Dipesh Kumar Sah
+          </li>
+          <li className="border-b border-gray-100 p-1">
+            Date of birth: 2002/10/02
+          </li>
+          <li className="border-b border-gray-100 p-1">
+            Email: kac22.26dks@ismt.edu.np
+          </li>
+          <li className="border-b border-gray-100 p-1">Section: A</li>
+          <li className="border-b border-gray-100 p-1">Phone: 9808982517</li>
+        </ul>
       </div>
     </>
   );

@@ -11,10 +11,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div
-      className="d-flex flex-column flex-shrink-0 p-3 text-white bg-blue-700 col-6 col-md-4 col-lg-2"
-      style={{ height: "100vh" }}
-    >
+    <div className=" flex-column max-h-full xl:h-screen flex-shrink-0 p-3 text-white bg-blue-700 col-1 col-md-4 col-lg-2 hidden md:flex">
       <a
         href="/"
         className="d-flex justify-center items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
