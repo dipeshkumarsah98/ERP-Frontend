@@ -1,6 +1,20 @@
 import React from "react";
 
 const UserProfile = () => {
+  const user = {
+    Name: "Dipesh Kumar Sah",
+    Address: "Jadibuti-2, Kathmandu",
+    "Date of birth": "2002/10/02",
+    Email: "kca22.26dks@ismt.edu.np",
+    "Father Name": "Rajesh Kumar sah",
+    "Mother Name": "Pramile Devi Sah",
+    Age: 21,
+    Course: "B.TECH",
+    Section: "P1(A)",
+    Semester: "III",
+    Batch: 2022,
+  };
+
   return (
     <>
       <div className="flex flex-col gap-1 mt-4 items-center sm:items-stretch">
@@ -19,30 +33,22 @@ const UserProfile = () => {
             </p>
           </div>
         </div>
-        <ul className="py-2 px-5 grid grid-cols-2 gap-0 bg-white font-roboto font-[550]  rounded-sm text-xs sm:text-sm lg:text-lg flex-1">
-          <li className="border-b border-gray-100 p-1">
-            Name: Dipesh Kumar Sah
-          </li>
-          <li className="border-b border-gray-100 p-1">
-            Date of birth: 2002/10/02
-          </li>
-          <li className="border-b border-gray-100 p-1">
-            Email: kac22.26dks@ismt.edu.np
-          </li>
-          <li className="border-b border-gray-100 p-1">Section: A</li>
-          <li className="border-b border-gray-100 p-1">Phone: 9808982517</li>
-          <li className="border-b border-gray-100 p-1">Sex: Male</li>
-          <li className="border-b border-gray-100 p-1">
-            Address: Jadibut, kathmandu
-          </li>
-          <li className="border-b border-gray-100 p-1">
-            Father Name: Rajesh Kumar Sah
-          </li>
-
-          <li className="border-b border-gray-100 p-1">
-            Mother Name: Pramila Devi Sah
-          </li>
-        </ul>
+        <div className=" py-2 px-2 lg:px-5 bg-white rounded-sm text-xs sm:text-sm lg:text-lg">
+          <h2 className="text-2xl px-5 font-roboto font-semibold py-3 border-b border-gray-300">
+            Information
+          </h2>
+          <div className="my-2 px-5 grid grid-cols-2 font-openSans h-80 overflow-y-scroll">
+            {Object.keys(user).map((element, index) => (
+              <div key={index} className="my-2">
+                <span className="text-base lg:text-xl font-bold">
+                  {element}
+                </span>
+                <br />
+                <span className="">{user[element]}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
