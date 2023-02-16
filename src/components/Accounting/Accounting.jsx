@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import qrcode from "../../assets/qrcode.png";
+import RecipeReviewCard from "./AccountingCard";
 const Accounting = () => {
   const [seeFeeStructure, setSeeFeeStructure] = useState(false);
   const seeFeeHandler = (e) => {
@@ -8,41 +9,36 @@ const Accounting = () => {
   };
   return (
     <>
-      <div className="rounded-lg border  border-gray-500 p-3 mt-2">
-        <h2 className="color text-black-500 font-medium font-openSans">
+      {/* <div className="rounded-lg border  border-gray-500 p-3 mt-2"> */}
+      <div className="bg-[#FAFAFA]">
+        <h1 className="my-2 text-xs font-semibold font-openSans uppercase text-blue-500 border border-zinc-500 py-2 px-3 bg-slate-100 shadow-sm md:text-2xl xl:text-2xl">
           Billing
-        </h2>
-        <p className="opacity-60 italic font-roboto">
-          Here is your billing details
-        </p>
-      </div>
-      <div className=" container row mt-2">
-        <div className="col-md-12 col-lg-7 col-sm-12 rounded-lg border  border-gray-500  mt-2 px-6 py-6">
-          <div className="row">
-            <div className="col-7">
-              <div className=" ">
-                <h4 className="color text-red-500 font-medium font-openSans">
-                  Remaining Fee
-                </h4>
-                <h2 className="font-medium text-2xl mt-2 mb-2 font-roboto">
-                  Rs 2,90,000 /-
-                  <span className="opacity-60 px-2 text-sm">NPR</span>{" "}
-                </h2>
-                <p className="italic opacity-50 text-xs font-roboto">
-                  From Jan 12, 2019 to 20 Feb 2023
-                </p>
-                <div className="mt-4">
-                  <button className="bg-blue-700 color text-[#fff] px-4 py-1 rounded-lg">
-                    Pay
-                  </button>{" "}
-                  <button className="bg-[#f8fafb] color px-4 py-1 rounded-lg border border-blue-700 text-black">
-                    Check History
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-5">
-              <div className="flex items-center justify-center">
+        </h1>
+        <div className="grid grid-cols-3 gap-4 text-center pb-4 mt-4">
+          <RecipeReviewCard
+            title="Remaining Fee"
+            color="red"
+            buttonText="See Billing History"
+            handler={seeFeeHandler}
+          />
+          <RecipeReviewCard
+            title="Remaining Fee"
+            color="red"
+            buttonText="See Billing History"
+            handler={seeFeeHandler}
+          />
+          <RecipeReviewCard
+            title="Upcoming Fee"
+            color="green"
+            buttonText="See Fee Structure"
+            handler={seeFeeHandler}
+          />
+        </div>
+
+        <div className="rounded-lg border bg-white border-gray-500 p-4 ">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="border p-2 shadow-sm">
+              <div className="flex justify-center mx-3">
                 <img
                   className="h-[20vh] w-[20vh] object-cover"
                   src={qrcode}
@@ -50,50 +46,92 @@ const Accounting = () => {
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div className="col-md-5">
-          <div className="rounded-lg border  border-gray-500 p-4 mt-2">
-            <h4 className="color text-green-500 font-medium font-openSans">
-              Total Fee
-            </h4>
-            <h2 className="font-medium text-2xl mt-2 mb-2 font-roboto">
-              Rs 20,00,000 /-
-              <span className="opacity-60 px-2 text-sm">NPR</span>{" "}
-            </h2>
-            <p className="italic opacity-50 text-xs font-roboto">
-              From Jan 12, 2019 to 20 Feb 2023
-            </p>
-            <div className="mt-4">
-              <button className="bg-blue-700 color text-[#fff] px-4 py-1 rounded-lg">
-                Pay
-              </button>{" "}
-              {seeFeeStructure ? <button
-                className="bg-[#f8fafb] color px-4 py-1 rounded-lg border border-blue-700 text-black"
-                onClick={(e) => seeFeeHandler(e)}
-              >
-                See Billing History
-              </button> : <button
-                className="bg-[#f8fafb] color px-4 py-1 rounded-lg border border-blue-700 text-black"
-                onClick={(e) => seeFeeHandler(e)}
-              >
-                Fee Structure
-              </button> }
-              
+            <div className="border p-2 shadow-sm">
+              <h4 className="color text-green-500 font-bold font-openSans">
+                NMB Bank
+              </h4>
+              <div>
+                <div className=" p-2 rounded-lg">
+                  <p>
+                    <span className="font-bold">Branch</span>: Tinkune,
+                    Kathmandu{" "}
+                  </p>
+                  <p>
+                    {" "}
+                    <span className="font-bold"> Account Name</span> :
+                    International School of Management Account
+                  </p>
+                  <p>
+                    <span className="font-bold">No .</span>
+                    :0750057933400051
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border p-2 shadow-sm">
+              <h4 className="color text-green-500 font-bold font-openSans">
+                Prabhu Bank
+              </h4>
+              <div>
+                <div className=" p-2 rounded-lg">
+                  <p>
+                    <span className="font-bold">Branch</span>: Babarmahal,
+                    Kathmandu
+                  </p>
+                  <p>
+                    {" "}
+                    <span className="font-bold"> Account Name</span> :
+                    International School of Mgmt & Tech
+                  </p>
+                  <p>
+                    <span className="font-bold">No .</span>
+                    :0010075654500011
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border p-2 shadow-sm">
+              <h4 className="color text-green-500 font-bold font-openSans">
+                Prime Commercial Bank
+              </h4>
+              <div>
+                <div className=" p-2 rounded-lg">
+                  <p>
+                    <span className="font-bold">Branch</span>: Bagbazzar
+                  </p>
+                  <p>
+                    {" "}
+                    <span className="font-bold"> Account Name</span> : Int'l
+                    School of Mgmt and Technology
+                  </p>
+                  <p>
+                    <span className="font-bold">No .</span>
+                    :001800046CA
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
         {seeFeeStructure ? (
           <div className="container mt-4">
-            <div className="rounded-lg border  border-gray-500 p-3 mt-2 mb-2">
-              <h2 className="color text-black-500 font-medium font-openSans">
-                Fee Structure
-              </h2>
-              <p className="opacity-60 italic font-roboto">
-                See fee structure year wised
-              </p>
-            </div>
-            <div className="h-[40vh] overflow-y-scroll">
+            {/* <div className="rounded-lg border  border-gray-500 px-4 py-3 mt-2 mb-2 flex justify-between">
+                <div>
+                  <h2 className="color text-black-500 font-medium font-openSans">
+                    Fee Structure
+                  </h2>
+                  <p className="opacity-60 italic font-roboto">
+                    See fee structure year wised
+                  </p>
+                </div>
+                <div>
+                  <button className="bg-blue-500 text-white rounded-sm py-1 px-3">
+                    Download Fee Structure
+                  </button>
+                </div>
+              </div> */}
+            <div className="h-[36vh] overflow-y-scroll">
               <div>
                 <h2 className="flex justify-center m-6 font-openSans">
                   First year
@@ -265,14 +303,14 @@ const Accounting = () => {
           </div>
         ) : (
           <div className="container mt-4 ">
-            <div className="rounded-lg border  border-gray-500 p-3 mt-2 mb-2">
-              <h2 className="color text-black-500 font-medium font-openSans">
-                Billing History
-              </h2>
-              <p className="opacity-60 italic font-roboto">
-                Keep track of billing details
-              </p>
-            </div>
+            {/* <div className="rounded-lg border  border-gray-500 p-3 mt-2 mb-2">
+                <h2 className="color text-black-500 font-medium font-openSans">
+                  Billing History
+                </h2>
+                <p className="opacity-60 italic font-roboto">
+                  Keep track of billing details
+                </p>
+              </div> */}
             <table className="table-auto w-full text-center">
               <thead>
                 <tr className="bg-gray-300">
