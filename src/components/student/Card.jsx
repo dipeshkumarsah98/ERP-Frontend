@@ -1,5 +1,5 @@
 import React from "react";
-import { GoBook } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const Card = ({
   bgColor,
@@ -10,8 +10,10 @@ const Card = ({
   iconColor,
   Icon,
 }) => {
+  const url = name.toLowerCase();
   return (
-    <div
+    <Link
+      to={`/${url}`}
       style={{
         backgroundColor: bgColor || "white",
         color: color || "black",
@@ -35,7 +37,7 @@ const Card = ({
       >
         2 Pending
       </p>
-    </div>
+    </Link>
   );
 };
 

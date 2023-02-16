@@ -16,7 +16,6 @@ import Course from "./components/Course/Course";
 function App() {
   const { userData, setUserData, userLoading, setUserLoading } =
     useContext(UserContext);
-  console.log(" I am sending user ", userData);
 
   return (
     <div>
