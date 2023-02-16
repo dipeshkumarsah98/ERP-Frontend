@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
-import { AiFillCaretDown, AiFillHome } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
 import { GoBook } from "react-icons/go";
-import { BsFileBarGraph } from "react-icons/bs";
 import { HiAcademicCap } from "react-icons/hi";
 import { MdOutlineLibraryBooks, MdAccountBalance } from "react-icons/md";
 
@@ -15,7 +14,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className=" flex-column max-h-full xl:h-screen font-roboto flex-shrink-0 p-3 text-white bg-blue-700 col-1 col-md-4 col-lg-2 hidden md:flex">
+    <div className=" flex-column max-h-full xl:h-screen font-bold font-roboto flex-shrink-0 p-3 text-white bg-blue-700 col-1 col-md-4 col-lg-2 hidden md:flex">
       <a
         href="/"
         className="d-flex justify-center items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
@@ -60,61 +59,7 @@ const Sidebar = () => {
             Assignment
           </Link>
         </li>
-        {/* <li className="nav-item">
-          <button
-            className="btn btn-toggle align-items-center rounded text-white flex gap-2 text-xl"
-            data-bs-toggle="collapse"
-            data-bs-target="#dashboard-collapse"
-            aria-expanded="true"
-          >
-            <HiAcademicCap />
-            Assignment
-            <AiFillCaretDown />
-          </button>
-          <div className="collapse" id="dashboard-collapse">
-            <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small ml-7 visible">
-              <li>
-                <Link
-                  to="/"
-                  onClick={() => handleClick("blood")}
-                  className={
-                    active === "blood"
-                      ? "nav-link text-white active text-lg"
-                      : "nav-link text-white text-lg"
-                  }
-                >
-                  Blood Report
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  onClick={() => handleClick("urin")}
-                  className={
-                    active === "urin"
-                      ? "nav-link text-white active text-lg"
-                      : "nav-link text-white text-lg"
-                  }
-                >
-                  Urin Report
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  onClick={() => handleClick("stool")}
-                  className={
-                    active === "stool"
-                      ? "nav-link text-white active text-lg"
-                      : "nav-link text-white text-lg"
-                  }
-                >
-                  Stool Report
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </li> */}
+
         <li>
           <Link
             to="/library"
@@ -141,20 +86,6 @@ const Sidebar = () => {
           >
             <MdOutlineLibraryBooks />
             Courses
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/result"
-            onClick={() => handleClick("exam-result")}
-            className={
-              active === "exam-result"
-                ? "nav-link text-white active flex items-center  gap-2 text-xl"
-                : "nav-link text-white flex items-center  gap-2 text-xl"
-            }
-          >
-            <BsFileBarGraph />
-            Exam Result
           </Link>
         </li>
         <li>
