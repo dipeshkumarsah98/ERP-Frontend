@@ -43,42 +43,38 @@ const BookSection = () => {
 
 const Library = () => {
   return (
-    <div className="overflow-y-hidden h-screen">
+    <div className=" h-screen overflow-y-hidden">
       <h1 className="my-2 rounded text-center bg-blue-400 h-[5vh] flex justify-center items-center">
         <p className="text-xs text-gray-600">
           Library Book Renew: Airtifical Intelligence- March 23 2023
         </p>
       </h1>
       <div class="grid grid-cols-2 gap-2  bg-gray-100">
-        <div className="bg-white m-2 row-span-2 rounded  ">
-          <h1 className="text-center m-2 text-orange-400">
+        <div className="bg-white m-2 col-span-2 rounded  ">
+          <h1 className="text-center m-2 font-openSans font-bold text-lg text-blue-500">
             {" "}
             Welcome to ISMT Library
           </h1>
           <Box
             className="mx-3 my-4"
             sx={{
-              width: 500,
+              width: "79vw",
               maxWidth: "100%",
             }}
           >
             <TextField fullWidth label="Search for Books" id="fullWidth" />
           </Box>
-          <div className="overflow-y-scroll h-screen">
-            <BookSection />
-            <BookSection />
-            <BookSection />
-            <BookSection />
+          <div className="overflow-y-scroll h-[40vh]">
             <BookSection />
             <BookSection />
             <BookSection />
           </div>
         </div>
-        <div className="bg-white mt-2 row-span-2 rounded ">
-          <h1 className="text-center my-2 text-green-500">
-            Previous Library Books
+        <div className="bg-white mt-2 col-span-2 rounded ">
+          <h1 className="text-center my-2 font-bold font-openSans text-lg  text-blue-500">
+            Previous Library Records
           </h1>
-          <div className="overflow-y-scroll h-screen ">
+          <div className="overflow-y-scroll h-[25vh]  ">
             <DenseTable />
           </div>
         </div>
