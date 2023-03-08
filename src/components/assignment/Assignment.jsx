@@ -1,6 +1,7 @@
 import React from "react";
 import LinkIcon from "@mui/icons-material/Link";
 import logo from "../../assets/logo-ismt.png";
+import UploadIcon from "@mui/icons-material/Upload";
 const AssignmentNoticeRow = () => {
   return (
     <>
@@ -46,15 +47,15 @@ const AssignmentGrades = () => {
 const RowsAssignment = () => {
   return (
     <>
-      <div className=" flex justify-between items-center border-b-2 px-6 py-2 text-xs  ">
+      <div className=" flex justify-between  items-center border-b-2 px-6 py-2 text-sm font-roboto  ">
         {/* Assignment name and details */}
         <div className="flex-1">
-          <h1 className="my-2">Advanced Programming</h1>
-          <h1 className="text-gray-400">
+          <h1 className="my-2 font-bold">Advanced Programming</h1>
+          <h1 className="text-gray-500">
             Advance programming assignment to solver real world programming
             problems
           </h1>
-          <h1 className="text-blue-400 my-2">
+          <h1 className="text-blue-500 my-2">
             <LinkIcon />
             <a href="">Download Link</a>
           </h1>
@@ -64,9 +65,10 @@ const RowsAssignment = () => {
           <div></div>
           <div>
             <h1>Feb 9 2023</h1>
-            <h1 className="text-green-500 my-3">Submitted</h1>
-            <h1 className="text-blue-400 ">
+            <h1 className="text-green-600 my-3">Submitted</h1>
+            <h1 className="text-blue-500 ">
               {" "}
+              <UploadIcon />
               <a href="">Upload</a>{" "}
             </h1>
           </div>
@@ -80,7 +82,7 @@ const Assignment = () => {
   return (
     <div className="overflow-y-hidden h-screen">
       <h1 className="my-2 rounded text-center bg-blue-400 h-[5vh] flex justify-center items-center">
-        <p className="text-xs text-gray-600">
+        <p className="text-xs text-gray-600 font-bold font-roboto">
           New Assignment Released: Research Proposal- March 23 2023
           <a href="" className="text-blue-600">
             {" "}
@@ -91,33 +93,49 @@ const Assignment = () => {
       <div class="grid grid-cols-2 gap-2 bg-gray-100">
         <div
           className="bg-white m-2 row-span-2
-       rounded overflow-auto hover:overflow-scroll "
+       rounded"
         >
-          <h1 className="text-center m-2 text-orange-400">
+          <h1 className="text-center m-2 text-lg font-openSans font-bold text-blue-500">
             {" "}
-            Assignments Summary
+            Assignment Summary
           </h1>
-          <RowsAssignment />
-          <RowsAssignment />
-          <RowsAssignment />
+          <div className="overflow-y-scroll h-screen space-y-10">
+            <RowsAssignment />
+            <RowsAssignment />
+            <RowsAssignment />
+            <RowsAssignment />
+            <RowsAssignment />
+            <RowsAssignment />
+            <RowsAssignment />
+            <RowsAssignment />
+            <RowsAssignment />
+            <RowsAssignment />
+          </div>
         </div>
-        <div className="bg-white mt-2 rounded overflow-y-scroll h-[50vh]">
-          <h1 className="text-center my-2 text-green-500">
-            Assignment Notice Board
+        <div className="bg-white mt-2 rounded">
+          <h1 className="text-center m-2 text-lg font-openSans font-bold text-blue-500">
+            Released Assignments
           </h1>
-          <AssignmentNoticeRow />
-          <AssignmentNoticeRow />
-          <AssignmentNoticeRow />
+          <div className="overflow-y-scroll h-[50vh]">
+            <AssignmentNoticeRow />
+            <AssignmentNoticeRow />
+            <AssignmentNoticeRow />
+            <AssignmentNoticeRow />
+            <AssignmentNoticeRow />
+            <AssignmentNoticeRow />
+          </div>
         </div>
-        <div className="bg-white h-[50vh] rounded overflow-y-scroll">
-          <h1 className="text-center my-2 text-yellow-500">
+        <div className="bg-white mt-3 rounded">
+          <h1 className="text-center m-2 text-lg font-openSans font-bold text-blue-500">
             Assignment Grades
           </h1>
-          <AssignmentGrades />
-          <AssignmentGrades />
-          <AssignmentGrades />
-          <AssignmentGrades />
-          <AssignmentGrades />
+          <div className="overflow-y-scroll h-[50vh] ">
+            <AssignmentGrades />
+            <AssignmentGrades />
+            <AssignmentGrades />
+            <AssignmentGrades />
+            <AssignmentGrades />
+          </div>
         </div>
       </div>
     </div>
